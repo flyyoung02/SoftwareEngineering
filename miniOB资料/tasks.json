@@ -1,0 +1,43 @@
+{
+	"options": {
+		"cwd": "${workspaceFolder}/miniob/build"
+		},
+		"tasks": [
+		{
+		"label": "cmake",
+		"command": "cmake",
+		"args": [
+		"-DDEBUG=ON",
+		".."
+		]
+		},
+		{
+		"label": "make",
+		"command": "make"
+		},
+		{
+		"label": "CMake Build",
+		"dependsOn": [
+		"cmake",
+		"make"
+		]
+		},
+		{
+		"label": "Get pid of observer",
+		"type": "shell",
+		"command":"ps aux | grep observer"
+		},
+		{
+		"label": "Run observer",
+		"type": "shell",
+		"command":"/root/miniob/build/bin/observer -s /root/miniob.sock -f /root/miniob/etc/observer.ini"
+		},
+		{
+		"label": "Run obclient",
+		"type": "shell",
+		"command":"/root/miniob/build/bin/obclient -s /root/miniob.sock"
+		}
+		],
+		"version": "2.0.0"
+
+}
