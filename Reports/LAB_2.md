@@ -14,39 +14,46 @@
 
 ## 1.开源软件开源软件环境训练
 
-##### 完成人：冯潇宇、刘丽华
+##### 完成人：冯潇宇、刘丽华、蒋裕成
 
-### 1. 克隆远程仓库
+### 1. 克隆原始代码上传至团队的repository
+
+使用Github Desktop完成初始代码的上传，并配置好后续的使用环境。
+
+![repo_init](https://user-images.githubusercontent.com/119791285/223663469-3cacf589-bf3c-4d16-aaf7-a1c5765bb242.png)
+
+
+### 2. 克隆远程仓库
 
 ![clone](LAB_2.assets/clone.png)
 
 
 
-### 2. 创建并切换分支
+### 3. 创建并切换分支
 
 ![创建并切换分支](LAB_2.assets/创建并切换分支.png)
 
 
 
-### 3. 修改并提交分支
+### 4. 修改并提交分支
 
 ![修改并提交分支](LAB_2.assets/修改并提交分支.png)
 
 
 
-### 4. 合并后删除分支
+### 5. 合并后删除分支
 
 ![合并后删除分支](LAB_2.assets/合并后删除分支.png)
 
 
 
-### 5. 将本地分支推送到远程仓库
+### 6. 将本地分支推送到远程仓库
 
 ![将本地分支推送到远程仓库](LAB_2.assets/将本地分支推送到远程仓库.png)
 
 
 
-### 6. 合并组员分支并解决冲突
+### 7. 合并组员分支并解决冲突
 
 ![合并组员分支并解决冲突1](LAB_2.assets/合并组员分支并解决冲突1.png)
 
@@ -81,8 +88,6 @@
 
 ## 2.团队协作继续进行开源项目的分析工作
 
-
-
 （a）欢迎大家注册登录 软件工程学习社区 https://www.learnerhub.net/#/spaces/146 ，学习前人经验。
      目前该学习社区已经汇聚了国内92所高校的同学，产生了大量的问题讨论和评论，资源众多。
 
@@ -93,6 +98,14 @@ https://www.learnerhub.net/#/spaces/146  开源软件(小米便签)阅读与维�
   miniOB社区
   https://developer.aliyun.com/article/1089721 MiniOB 学习笔记
   https://open.oceanbase.com/train  MiniOB 实训营
+  
+##### 完成人：蒋裕成
+
+配置好项目中.vscode的tasks.json、launch.json、settings.json，方便团队使用vscode + docker进行后续的开发、调试。
+
+![vscode_configuration](https://user-images.githubusercontent.com/119791285/223664000-9f8f4745-eb9d-4f6d-b7e4-af8ca74587f5.png)
+
+代码在docker中通过了构建，并能够正常运行miniob的base功能。
 
 ## 3.下面这段求两数的平均值的代码在低年级可给满分，但请结合阿丽亚娜-5型火箭失败的案例，思考它有什么bug?
 
