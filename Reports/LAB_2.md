@@ -19,8 +19,10 @@
 ### 1. 克隆原始代码上传至团队的repository
 
 使用Github Desktop完成初始代码的上传，并配置好后续的使用环境。
-
 ![repo_init](https://user-images.githubusercontent.com/119791285/223663469-3cacf589-bf3c-4d16-aaf7-a1c5765bb242.png)
+
+为repository添加.gitignore，使git只上传源码，不上传项目的构造结果。
+![gitignore](https://user-images.githubusercontent.com/119791285/223667405-c0df057a-f45c-440a-8560-fa4574c589fa.png)
 
 
 ### 2. 克隆远程仓库
