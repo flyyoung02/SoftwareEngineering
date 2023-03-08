@@ -229,6 +229,18 @@ use case用例图中的include和extend是两种不同的关系，用来表示�
 
 下面提供三种开发方法的优缺点对比：
 
+<style>
+table th:first-of-type {
+    width: 15%;
+}
+table th:nth-of-type(2) {
+    width: 45%;
+}
+table th:nth-of-type(3) {
+    width: 45%;
+}
+</style>
+
 |开发方法|优点|缺点|
 |------------|----|---|
 |增量式模型|可以快速提供部分功能给用户，有计划的管理技术风险|需要开放式体系结构，可能会产生设计效果差、开发效率低的情况|
