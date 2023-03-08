@@ -14,24 +14,34 @@
 
 ## 1.开源软件开源软件环境训练
 
-参考 https://www.learnerhub.net/#/spaces/146/resources-docs/6423
-    和 《基于MiniOB的数据库管理系统内核实现实验手册》中实验一
-   或 参考这个课程网站，https://www.educoder.net/paths/9i8a7og6   开源软件技术
+参考 https://www.learnerhub.net/#/spaces/146/resources-docs/6423 和 《基于MiniOB的数据库管理系统内核实现实验手册》中实验一 或 参考这个课程网站，https://www.educoder.net/paths/9i8a7og6 开源软件技术
 
 学会小组git代码提交、分支、合并版本。截图放入实验报告。 参考git文档。
+
 组长将代码上传至开源网站（gitee）、组员建立分支，PR，组长合并分支。 
 
   相关资料： 
+  
+  
   https://baijiahao.baidu.com/s?id=1687478489959361341   git底层原理
+  
   https://blog.csdn.net/u011473714/article/details/114301206   gitee码云完整使用教程（部署与克隆）
+  
   https://blog.csdn.net/weixin_45296116/article/details/120982586   Git 远程仓库及回滚日志操作
+  
   https://www.liaoxuefeng.com/wiki/896043488029600/900375748016320#0  git多人协作
+  
   https://www.liaoxuefeng.com/wiki/896043488029600/1216289527823648  git多人协作（2）
+  
 
 华为开源训练营网址：
+
 【学习课程地址】openEuler社区开源贡献实践 https://www.hikunpeng.com/zh/learn/courses-list/detail/1551495292913283073
+
 【在线实验地址】openEuler社区开源贡献实践 https://www.hikunpeng.com/zh/learn/experiments/detail/T220720001 
+
 【通关秘籍】openEuler社区贡献在线实验指导 https://www.hikunpeng.com/learn/courses-list/detail/1603573775316582401 
+
 
 ##### 完成人：冯潇宇、刘丽华、蒋裕成
 
@@ -118,16 +128,25 @@ https://www.learnerhub.net/#/spaces/146  开源软件(小米便签)阅读与维�
 
 - **包含(Include)** 表示一个基本用例包含另一个子用例的行为，来把一个较复杂用例所表示的功能分解成较小的步骤，即子用例是基本用例的一部分。包含的用例的执行类似于编程中的子程序调用或宏命令。包含用例取决于所包含的用例的添加，这是**必需的而非可选的**。例如，取款是ATM机的一个基本用例，验证密码是取款的一个子用例，取款必须包含验证密码这个步骤。
     - 用例B从较大的用例A中提取到一个单独的用例中。
+ 
 ![1](LAB_2.assets/1.png)
+
     - 用例B和C从较大的用例A中提取到单独的用例中。
+    
 ![2](LAB_2.assets/2.png)
+
     - 用例C是从用例A和B中提取出来的，两个用例都使用UML包含关系重用。
+
 ![3](LAB_2.assets/3.png)
+
     - 箭头指向：指向分解出来的功能用例。
+
 ![4](LAB_2.assets/4.png)
+
 - **拓展(Extend)** 表示一个扩展用例在某些条件下添加到基本用例的行为中，是指用例功能的延伸，相当于为基础用例提供一个附加功能。扩展用例通常定义可选的行为，这些行为本身并不一定有意义。例如，取款也是ATM机的一个基本用例，收费是取款的一个扩展用例，只有当用户不属于ATM机所属银行时，才会执行收费这个步骤。
     - 扩展关系是扩展用例的泛化关系继续基本用例的行为。扩展用例通过在概念上将附加动作序列插入基本用例序列来实现这一点。这允许扩展用例在基本用例中达到适当的扩展点并且满足扩展条件时继续基本用例的活动序列。当扩展用例活动序列完成时，基本用例继续。
     - 箭头指向：指向基础用例。
+
 ![5](LAB_2.assets/5.png)
 
 下面为Include和Extend的区别，特别的，对于Extend而言，延伸用例并不包含基础用例的内容，基础用例也不包含延伸用例的内容。
