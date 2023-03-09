@@ -53,7 +53,7 @@
 为repository添加.gitignore，使git只上传源码，不上传项目的构造结果。
 ![gitignore](https://user-images.githubusercontent.com/119791285/223667405-c0df057a-f45c-440a-8560-fa4574c589fa.png)
 
-** 2. 克隆远程仓库**
+**2. 克隆远程仓库**
 
 ![clone](LAB_2.assets/clone.png)
 
