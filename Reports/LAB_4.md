@@ -121,6 +121,7 @@ https://github.com/SonarSource/sonarqube
     
     测试中发现，Enterprise Architect的UML逆向工程功能效果较好，可以根据C/C++代码生成UML图。
     
+
 ![enterprise_architect](https://user-images.githubusercontent.com/119791285/226619453-a1160ef2-0063-46e8-8b18-0a3b8a9e65e7.png)
 
 11. StarUML 
@@ -289,6 +290,8 @@ Microsoft Project是一款流行的项目管理软件，其主要用途是帮助
 ![image-20230321214907440](LAB_4.assets/image-20230321214907440.png)
 
 ![image-20230321214915891](LAB_4.assets/image-20230321214915891.png)
+
+![image-20230321220815017](LAB_4.assets/image-20230321220815017.png)
 
 
 
