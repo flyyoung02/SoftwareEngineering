@@ -217,6 +217,28 @@ https://github.com/SonarSource/sonarqube
 
 
 
+### 使用GanttProject建立活动图，并自动化求关键路径
+
+#### GanttProject简介
+
+GanttProject是一款开源的项目管理软件，其主要用途是帮助用户规划、管理和控制项目进度，包括时间和资源的分配、任务分配、里程碑和关键路径等。以下是GanttProject的技术特点：
+
+1. 支持Gantt图和PERT图：GanttProject支持使用Gantt图和PERT图两种方法来可视化项目计划。用户可以通过拖动和放置来安排任务、设置依赖关系和优化资源分配等。
+2. 支持导入和导出Microsoft Project文件：GanttProject与Microsoft Project文件格式兼容，可以将项目计划从Microsoft Project导入到GanttProject中，也可以将GanttProject文件导出为Microsoft Project文件格式。
+3. 轻量级和跨平台：GanttProject是一个轻量级应用程序，具有快速启动和响应时间的优点。它也是跨平台的，可以在Windows、Mac OS和Linux等操作系统上运行。
+4. 开源软件：GanttProject是一款开源软件，允许用户自由地使用、修改和分发软件源代码。这使得GanttProject具有灵活性和可定制性，可以根据特定的需求进行修改和扩展。
+5. 详细的任务管理功能：GanttProject提供了丰富的任务管理功能，包括任务名称、起始日期、结束日期、持续时间、优先级、进度等信息。它还可以通过颜色和符号来显示任务状态。
+
+总之，GanttProject是一款功能强大、易于使用的项目管理软件，它可以帮助用户规划和跟踪项目的进度和资源分配，以实现项目的顺利完成。
+
+
+
+GanttProject软件界面
+
+![image-20230321210221062](LAB_4.assets/image-20230321210221062.png)
+
+
+
 ## 2. 继续团队协作继续进行开源项目的分析工作
 
 参照 小米便签开源代码的泛读报告（模板）.doc ，填写丰富开源软件分析报告。
