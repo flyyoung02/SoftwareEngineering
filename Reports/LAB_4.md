@@ -217,8 +217,6 @@ https://github.com/SonarSource/sonarqube
 
 
 
-### 使用GanttProject建立活动图，并自动化求关键路径
-
 #### GanttProject简介
 
 GanttProject是一款开源的项目管理软件，其主要用途是帮助用户规划、管理和控制项目进度，包括时间和资源的分配、任务分配、里程碑和关键路径等。以下是GanttProject的技术特点：
@@ -233,9 +231,44 @@ GanttProject是一款开源的项目管理软件，其主要用途是帮助用�
 
 
 
-GanttProject软件界面
+##### GanttProject软件界面
 
 ![image-20230321210221062](LAB_4.assets/image-20230321210221062.png)
+
+
+
+#### Microsoft Project简介
+
+Microsoft Project是一款流行的项目管理软件，其主要用途是帮助用户规划、管理和控制项目进度、资源和预算等方面。以下是Microsoft Project的技术特点：
+
+1. 支持Gantt图和PERT图：Microsoft Project支持使用Gantt图和PERT图两种方法来可视化项目计划。用户可以通过拖动和放置来安排任务、设置依赖关系和优化资源分配等。
+2. 集成式项目管理：Microsoft Project可以集成式地管理项目的进度、资源和预算等方面。用户可以创建和管理任务、分配资源、追踪项目进度、生成报告等。
+3. 支持协作：Microsoft Project支持协作，可以让多个用户共同编辑同一个项目，共享项目文件、任务分配、资源分配等信息。此外，它还支持与Microsoft Teams等协作平台的集成。
+4. 预测和分析功能：Microsoft Project提供了一些预测和分析功能，可以帮助用户优化项目计划，分析风险和成本，进行决策等。
+5. 灵活的定制：Microsoft Project具有灵活的定制功能，用户可以根据自己的需求进行个性化的配置和修改。例如，用户可以创建自定义的字段、表格、过滤器等。
+6. 与其他Microsoft Office应用程序的集成：Microsoft Project可以与其他Microsoft Office应用程序（如Excel、Word、Outlook）进行集成，用户可以从中导入和导出数据，共享信息等。
+
+总之，Microsoft Project是一款功能丰富、灵活性高的项目管理软件，它可以帮助用户规划和跟踪项目的进度和资源分配，以实现项目的顺利完成。同时，其协作、分析、定制等功能也使得用户能够更好地管理和控制项目。
+
+
+
+#### 使用Microsoft Project建立任务、绘制活动图并自动化求关键路径
+
+1. 填写任务名称、工期、前置任务。软件自动生成甘特图
+
+![image-20230321214722625](LAB_4.assets/image-20230321214722625.png)
+
+2. 查看活动图视图，红色的路径即为关键路径
+
+![image-20230321214833211](LAB_4.assets/image-20230321214833211.png)
+
+![image-20230321214856010](LAB_4.assets/image-20230321214856010.png)
+
+![image-20230321214907440](LAB_4.assets/image-20230321214907440.png)
+
+![image-20230321214915891](LAB_4.assets/image-20230321214915891.png)
+
+
 
 
 
