@@ -59,7 +59,7 @@ https://github.com/SonarSource/sonarqube
 
 ### 工具调研
 
-**完成人：冯潇宇**
+**完成人：冯潇宇、蒋裕成**
 
 1. Microsoft Visio 
 
@@ -118,18 +118,31 @@ https://github.com/SonarSource/sonarqube
 10. Enterprise Architect 
 
     用途：Enterprise Architect 是一个全面的建模、可视化和设计工具，支持业务流程、系统建模、软件开发和企业架构等领域。 技术特点：支持UML、BPMN、SysML等建模语言，具备代码生成和逆向工程功能，支持多用户协作，可与其他工具集成。
+    
+    测试中发现，Enterprise Architect的UML逆向工程功能效果较好，可以根据C/C++代码生成UML图。
+    
+![enterprise_architect](https://user-images.githubusercontent.com/119791285/226619453-a1160ef2-0063-46e8-8b18-0a3b8a9e65e7.png)
 
 11. StarUML 
 
     用途：StarUML 是一个开源UML建模工具，用于创建和管理软件设计模型。 
 
     技术特点：支持UML 2.x标准，提供丰富的图表类型，具有代码生成和逆向工程功能，支持模板和扩展插件。
+    
+    StarUML已经多年未更新。（虽然最近StarUML开始恢复更新，但是没有大的变化）
+    
+    测试中发现，StarUML的UML逆向工程对C/C++代码的支持效果不好，基本不能用来生成UML图。
+    
+    ![staruml](https://user-images.githubusercontent.com/119791285/226619819-c3931585-1ac9-4886-9988-45453c144d65.png)
+
 
 12. PlantUML 
 
     用途：PlantUML 是一个开源的文本到UML图形转换工具，可以快速生成UML图表。
 
-     技术特点：基于文本的简洁语法，支持多种UML图表类型，可集成到各种文档编辑器和开发环境中。
+    技术特点：基于文本的简洁语法，支持多种UML图表类型，可集成到各种文档编辑器和开发环境中。
+    
+    由于PlantUML是一种UML语法，他本身没有UML正/逆向工程的能力，但是有一些编辑器/IDE支持PlantUML正向工程的插件（根据UML生成代码），例如vscode。
 
 13. ModelMaker 
 
@@ -142,6 +155,11 @@ https://github.com/SonarSource/sonarqube
     用途：Umbrello 是一款开源的UML建模工具，用于创建和分析软件设计模型。 
 
     技术特点：支持UML 2.x标准，提供多种图表类型，具有代码生成和逆向工程功能，支持多种文件格式导入导出。
+    
+    测试中发现，Umbrello的UML逆向工程对C/C++代码的支持效果不好，基本不能用来生成UML图。
+    
+    ![umbrello](https://user-images.githubusercontent.com/119791285/226620273-b77f6461-1f2a-490c-b402-331b9982a8f0.png)
+
 
 15. TOgether 
 
@@ -160,6 +178,10 @@ https://github.com/SonarSource/sonarqube
     用途：Visual Paradigm for UML 是一个UML建模工具，用于创建和分析软件设计模型。 
 
     技术特点：支持UML 2.x标准，提供多种图表类型，具有代码生成和逆向工程功能，支持模型验证和模型转换。
+    
+    测试中发现，Visual Paradigm的UML逆向工程功能效果较好，可以根据C/C++代码生成UML图。但是Visual Paradigm的UML导出不太便捷，而且对于大型工程的UML，自动排版难以使用,一旦图中框图元素太多，一般就不太能整理出美观的排版。
+    
+    ![visual_paradigm](https://user-images.githubusercontent.com/119791285/226621124-5091d3ee-66a0-46c3-b7b8-16471deac236.png)
 
 18. Marvel 
 
