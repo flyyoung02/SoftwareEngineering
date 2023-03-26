@@ -39,6 +39,8 @@
 
 燃尽图（Burndown Chart）是敏捷项目管理和Scrum框架中常用的一种图表，用于可视化项目进度和团队的工作速度。它可以用于跟踪团队在一个特定的时间段内（通常是一个迭代周期，如一个Sprint）完成任务的情况。通过燃尽图，团队成员、Scrum Master和产品负责人可以清晰地了解项目进度，从而更好地调整计划和资源。
 
+![image](https://user-images.githubusercontent.com/119791285/227778384-2323abff-efcb-49ea-ae8e-1b1da3d48a14.png)
+
 燃尽图的基本结构如下：
 
 1. 横轴（X轴）：表示时间，通常以迭代周期（Sprint）内的工作日为单位。从Sprint的第一天开始，一直到Sprint的最后一天。
