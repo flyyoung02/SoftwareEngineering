@@ -29,27 +29,27 @@
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
+|            | record   | RecordPageHandler     | 管理存储记录的页            |
+|            |          | RecordFileHandler     | 管理存储记录的文件          |
+|            |          | RecordFileScanner     | 对记录文件的扫描            |
+|            |          | Record                | 表示记录                   |
+|            |          | RecordPageIterato     | 管理记录页的迭代器          |
+|            |          |                       |                            |
+|            |          |                       |                            |
+|            |          |                       |                            |
+|            |          |                       |                            |
+|            | mem      | MemStorageStage       | 实现内存存储阶段的功能       |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
+|            | trx      | Operation             | 对记录的操作                |
+|            |          | OperationHasher       | 为操作提供哈希函数实现       |
+|            |          | OperationEqualer      | 为操作提供相等比较函数实现   |
+|            |          | Trx                   | 实现事务的相关操作          |
 |            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
+|            | persist  | PersistHandler        | 提供对文件的基本操作         |
 
 
 
