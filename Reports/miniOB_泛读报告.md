@@ -15,7 +15,7 @@
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
-|            |          |                       |                            |
+|            | default  |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
@@ -25,9 +25,10 @@
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
+|            | clog     | CLogRecord            | 处理日志记录 ，记录历史      |
+|            |          | CLogBuffer            | 管理缓存的日志记录           |
+|            |          | CLogFile              | 管理日志文件                |
+|            |          | CLogManager           | 管理日志记录
 |            |          |                       |                            |
 |            | record   | RecordPageHandler     | 管理存储记录的页            |
 |            |          | RecordFileHandler     | 管理存储记录的文件          |
