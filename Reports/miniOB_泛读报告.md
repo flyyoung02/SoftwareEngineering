@@ -15,20 +15,25 @@
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
-|            | default  |                       |                            |
+|            | default  | DefaultHandler        | 管理和处理数据库和表         |
+|            |          | DefaultStorageStage   | 处理事件和回调的函数的实现   |
+|            |          | Frame                 | 描述数据帧                  |
+|            |          | BPFrameId             | 表示缓冲池中帧的唯一标识符    |
+|            |          | BPFrameManager        | 管理缓冲池中的帧             |
+|            |          | BufferPoolIterator    | 在缓冲池中迭代页面           |
+|            |          | DiskBufferPool        | 管理分页文件的缓冲池         |
+|            |          | BufferPoolManager     | 管理缓冲池                  |
 |            |          |                       |                            |
 |            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            | common   | IndexMeta             | 元数据与JSON格式的互相转换 |
+|            | common   | IndexMeta             | 元数据与JSON格式的互相转换   |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            | clog     | CLogRecord            | 处理日志记录 ，记录历史      |
 |            |          | CLogBuffer            | 管理缓存的日志记录           |
 |            |          | CLogFile              | 管理日志文件                |
-|            |          | CLogManager           | 管理日志记录
+|            |          | CLogManager           | 管理日志记录                |
+|            |          |                       |                            |
 |            |          |                       |                            |
 |            | record   | RecordPageHandler     | 管理存储记录的页            |
 |            |          | RecordFileHandler     | 管理存储记录的文件          |
