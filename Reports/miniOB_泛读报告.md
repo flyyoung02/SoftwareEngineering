@@ -71,9 +71,22 @@
 | sql | executor           | ExecuteStage                                       | 实现建表、建索引、展示表、表排序、增删改查等操作             |
 |            |                    | SqlResult                                          | 用于存储SQL执行结果的类，可以设置元组模式、返回码、状态字符等信息，并提供了查询操作的接口，其中查询操作包括打开查询、关闭查询以及获取下一条元组 |
 |            | expr               | Expression                                         | 表达式的抽象描述,比如获取某个字段的值、比较运算、类型转换    |
-|            |                    | FieldExpr : public Expression                      |                                                              |
-|            |                    | ValueExpr : public Expression                      |                                                              |
-|            |                    | CastExpr : public Expression                       |                                                              |
+|            |                    | FieldExpr : public Expression                      | 用于表示数据库查询中的字段表达式。存储了某个表格中特定字段的信息，并提供了访问其元数据以及从元组中检索值的方法 |
+|            |                    | ValueExpr : public Expression                      | 定义一个值表达式类，用于处理不同数据类型的值，将数据类型转换为内部实现使用的TupleCell类型，支持从元组中获取该值表达式的值 |
+|            |                    | CastExpr : public Expression                       | 表示数据类型转换表达式，它可以将一个子表达式转换为指定的数据类型。其中包含一个子表达式和要转换的数据类 |
+|            |                    | ComparisonExpr : public Expression                 | 用于表示比较表达式的节点，包括了比较运算符、左右子表达式、类型、取值等成员函数 |
+|            |                    | ConjunctionExpr : public Expression                | 多个表达式使用同一种关系(AND或OR)来联结， 当前miniob仅有AND操作 |
+|            |                    | TupleCellSpec                                      | 表示一个元组中的一个单元格的规范，包括表名、字段名和别名等信息，并提供了获取这些信息的方法 |
+|            |                    | TupleCell                                          | 表示tuple中某个元素的值                                      |
+|            |                    | TupleSchema                                        | 定义元组的结构信息。它提供了三个方法以添加元组中的单元格信息，一个方法用于获取元组中单元格的数量，一个方法用于按索引获取元组中的单元格信息。 |
+|            |                    | Tuple                                              | 元组虚基类                                                   |
+|            |                    | RowTuple : public Tuple                            | 表示数据库中的一行元组，并提供了设置其记录和模式、获取其单元格数量和内容以及通过表名和字段名查找特定单元格的方法，还管理其字段表达式的内存。 |
+|            |                    | ProjectTuple : public Tuple                        | 该类包含了一个存储TupleCell对象的向量cells_，并实现了设置单元格，返回单元格数目，访问单元格以及查找单元格的函数。 |
+|            |                    | JoinedTuple : public Tuple                         | 将两个tuple合并为一个tuple，在join算子中使用                 |
+|            | operator           |                                                    |                                                              |
+|            |                    |                                                    |                                                              |
+|            |                    |                                                    |                                                              |
+|            |                    |                                                    |                                                              |
 |            |                    |                                                    |                                                              |
 |            |                    |                                                    |                                                              |
 
