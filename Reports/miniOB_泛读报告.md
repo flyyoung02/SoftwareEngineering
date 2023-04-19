@@ -8,68 +8,72 @@
 
 **表1** **miniOB的代码构成及实现功能**
 
-| **程序包** | **子包** | **类**                | **实现功能**               |
-| ---------- | -------- | --------------------- | -------------------------- |
-| storage    | index    | BplusTreeIndex        | 管理和操作B+树索引         |
-|            |          | BplusTreeIndexScanner | 扫描B+树索引               |
-|            |          | AttrComparator | 比较两个属性 |
-| | | KeyComparator | 根据属性值和RID值比较两个关键字，从而提供排序功能 |
-| | | AttrPrinter | 根据属性类型将值转换成字符串 |
-| | | KeyPrinter | 将键值对转换成字符串表示的功能，包括属性值和RID值 |
-| | | IndexFileHeader | 存储与数据文件的结构相关的属性、键、类型和根页号信息的成员，还包含了将这些信息转换为字符串格式以及设置不同成员值的方法 |
-| | | IndexNodeHandler | 初始化、验证和检索数据文件中索引节点信息 |
-| | | LeafIndexNodeHandler : public IndexNodeHandler | 检索B+树叶节点的信息 |
-| | | InternalIndexNodeHandler : public IndexNodeHandler | 操作B+树非叶节点的信息 |
-| | | BplusTreeHandler | 提供创建索引、打开索引、插入索引项、删除索引项、获取记录等操作，支持对B+树结构进行打印输出和验证 |
-| | | BplusTreeScanner | 用于在指定范围内扫描数据，并返回RID(记录标识符)。该类提供了open打开扫描器，next_entry获取下一条数据，以及close关闭扫描器的方法 |
-| |           | Index                                              | 数据索引                                                     |
-|            |           | IndexScanner                                       | 遍历元素数据 |
-|            | common   | IndexMeta | 元数据与JSON格式的互相转换                         |                                                              |
-| | | | |
-| | | | |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            | default  | DefaultHandler        | 管理和处理数据库和表         |
-|            |          | DefaultStorageStage   | 处理事件和回调的函数的实现   |
-|            |          | Frame                 | 描述数据帧                  |
-|            |          | BPFrameId             | 表示缓冲池中帧的唯一标识符    |
-|            |          | BPFrameManager        | 管理缓冲池中的帧             |
-|            |          | BufferPoolIterator    | 在缓冲池中迭代页面           |
-|            |          | DiskBufferPool        | 管理分页文件的缓冲池         |
-|            |          | BufferPoolManager     | 管理缓冲池                  |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |           |                                                    |                                                              |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            | clog     | CLogRecord            | 处理日志记录 ，记录历史      |
-|            |          | CLogBuffer            | 管理缓存的日志记录           |
-|            |          | CLogFile              | 管理日志文件                |
-|            |          | CLogManager           | 管理日志记录                |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            | record   | RecordPageHandler     | 管理存储记录的页            |
-|            |          | RecordFileHandler     | 管理存储记录的文件          |
-|            |          | RecordFileScanner     | 对记录文件的扫描            |
-|            |          | Record                | 表示记录                   |
-|            |          | RecordPageIterato     | 管理记录页的迭代器          |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            | mem      | MemStorageStage       | 实现内存存储阶段的功能       |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            |          |                       |                            |
-|            | trx      | Operation             | 对记录的操作                |
-|            |          | OperationHasher       | 为操作提供哈希函数实现       |
-|            |          | OperationEqualer      | 为操作提供相等比较函数实现   |
-|            |          | Trx                   | 实现事务的相关操作          |
-|            |          |                       |                            |
-|            | persist  | PersistHandler        | 提供对文件的基本操作         |
+| **程序包** | **子包** | **类**                                             | **实现功能**                                                 |
+| ---------- | -------- | -------------------------------------------------- | ------------------------------------------------------------ |
+| storage    | index    | BplusTreeIndex                                     | 管理和操作B+树索引                                           |
+|            |          | BplusTreeIndexScanner                              | 扫描B+树索引                                                 |
+|            |          | AttrComparator                                     | 比较两个属性                                                 |
+|            |          | KeyComparator                                      | 根据属性值和RID值比较两个关键字，从而提供排序功能            |
+|            |          | AttrPrinter                                        | 根据属性类型将值转换成字符串                                 |
+|            |          | KeyPrinter                                         | 将键值对转换成字符串表示的功能，包括属性值和RID值            |
+|            |          | IndexFileHeader                                    | 存储与数据文件的结构相关的属性、键、类型和根页号信息的成员，还包含了将这些信息转换为字符串格式以及设置不同成员值的方法 |
+|            |          | IndexNodeHandler                                   | 初始化、验证和检索数据文件中索引节点信息                     |
+|            |          | LeafIndexNodeHandler : public IndexNodeHandler     | 检索B+树叶节点的信息                                         |
+|            |          | InternalIndexNodeHandler : public IndexNodeHandler | 操作B+树非叶节点的信息                                       |
+|            |          | BplusTreeHandler                                   | 提供创建索引、打开索引、插入索引项、删除索引项、获取记录等操作，支持对B+树结构进行打印输出和验证 |
+|            |          | BplusTreeScanner                                   | 用于在指定范围内扫描数据，并返回RID(记录标识符)。该类提供了open打开扫描器，next_entry获取下一条数据，以及close关闭扫描器的方法 |
+|            |          | Index                                              | 数据索引                                                     |
+|            |          | IndexScanner                                       | 遍历元素数据                                                 |
+|            | common   | IndexMeta                                          | 元数据与JSON格式的互相转换                                   |
+|            |          | ConditionFilter                                    | 匹配一条数据的基类                                           |
+|            |          | DefaultConditionFilter : public ConditionFilter    | 匹配的具体实现                                               |
+|            |          | CompositeConditionFilter : public ConditionFilter  | 匹配的具体实现                                               |
+|            |          | Db                                                 | 数据库类，包括初始化、创建表、查找表、列出所有表、同步、恢复和获取操作日志管理器等方法 |
+|            |          | FieldMeta                                          | 定义字段的基本属性，如名称、类型、偏移量、长度等，以及对这些属性进行初始化、输出描述和输出JSON格式 |
+|            |          | Field                                              | 维护Table和FieldMeta                                         |
+|            |          | Table                                              | 表类，维护元数据保存的文件(完整路径)、表名、表数据存放的路径、字段个数、字段、clog管理器，用于维护redo log |
+|            |          |                                                    |                                                              |
+|            | default  | DefaultHandler                                     | 管理和处理数据库和表                                         |
+|            |          | DefaultStorageStage                                | 处理事件和回调的函数的实现                                   |
+|            |          | Frame                                              | 描述数据帧                                                   |
+|            |          | BPFrameId                                          | 表示缓冲池中帧的唯一标识符                                   |
+|            |          | BPFrameManager                                     | 管理缓冲池中的帧                                             |
+|            |          | BufferPoolIterator                                 | 在缓冲池中迭代页面                                           |
+|            |          | DiskBufferPool                                     | 管理分页文件的缓冲池                                         |
+|            |          | BufferPoolManager                                  | 管理缓冲池                                                   |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            | clog     | CLogRecord                                         | 处理日志记录 ，记录历史                                      |
+|            |          | CLogBuffer                                         | 管理缓存的日志记录                                           |
+|            |          | CLogFile                                           | 管理日志文件                                                 |
+|            |          | CLogManager                                        | 管理日志记录                                                 |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            | record   | RecordPageHandler                                  | 管理存储记录的页                                             |
+|            |          | RecordFileHandler                                  | 管理存储记录的文件                                           |
+|            |          | RecordFileScanner                                  | 对记录文件的扫描                                             |
+|            |          | Record                                             | 表示记录                                                     |
+|            |          | RecordPageIterato                                  | 管理记录页的迭代器                                           |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            | mem      | MemStorageStage                                    | 实现内存存储阶段的功能                                       |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            |          |                                                    |                                                              |
+|            | trx      | Operation                                          | 对记录的操作                                                 |
+|            |          | OperationHasher                                    | 为操作提供哈希函数实现                                       |
+|            |          | OperationEqualer                                   | 为操作提供相等比较函数实现                                   |
+|            |          | Trx                                                | 实现事务的相关操作                                           |
+|            |          |                                                    |                                                              |
+|            | persist  | PersistHandler                                     | 提供对文件的基本操作                                         |
 
 
 
