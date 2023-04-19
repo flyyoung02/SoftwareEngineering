@@ -12,7 +12,21 @@
 | ---------- | -------- | --------------------- | -------------------------- |
 | storage    | index    | BplusTreeIndex        | 管理和操作B+树索引         |
 |            |          | BplusTreeIndexScanner | 扫描B+树索引               |
-|            |          |                       |                            |
+|            |          | AttrComparator | 比较两个属性 |
+| | | KeyComparator | 根据属性值和RID值比较两个关键字，从而提供排序功能 |
+| | | AttrPrinter | 根据属性类型将值转换成字符串 |
+| | | KeyPrinter | 将键值对转换成字符串表示的功能，包括属性值和RID值 |
+| | | IndexFileHeader | 存储与数据文件的结构相关的属性、键、类型和根页号信息的成员，还包含了将这些信息转换为字符串格式以及设置不同成员值的方法 |
+| | | IndexNodeHandler | 初始化、验证和检索数据文件中索引节点信息 |
+| | | LeafIndexNodeHandler : public IndexNodeHandler | 检索B+树叶节点的信息 |
+| | | InternalIndexNodeHandler : public IndexNodeHandler | 操作B+树非叶节点的信息 |
+| | | BplusTreeHandler | 提供创建索引、打开索引、插入索引项、删除索引项、获取记录等操作，支持对B+树结构进行打印输出和验证 |
+| | | BplusTreeScanner | 用于在指定范围内扫描数据，并返回RID(记录标识符)。该类提供了open打开扫描器，next_entry获取下一条数据，以及close关闭扫描器的方法 |
+| |           | Index                                              | 数据索引                                                     |
+|            |           | IndexScanner                                       | 遍历元素数据 |
+| common | IndexMeta | 元数据与JSON格式的互相转换                         |                                                              |
+| | | | |
+| | | | |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            | default  | DefaultHandler        | 管理和处理数据库和表         |
@@ -25,7 +39,7 @@
 |            |          | BufferPoolManager     | 管理缓冲池                  |
 |            |          |                       |                            |
 |            |          |                       |                            |
-|            | common   | IndexMeta             | 元数据与JSON格式的互相转换   |
+|            |           |                                                    |                                                              |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
