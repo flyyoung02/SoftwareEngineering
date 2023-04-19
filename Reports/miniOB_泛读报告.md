@@ -22,12 +22,16 @@
 | | | InternalIndexNodeHandler : public IndexNodeHandler | 操作B+树非叶节点的信息 |
 | | | BplusTreeHandler | 提供创建索引、打开索引、插入索引项、删除索引项、获取记录等操作，支持对B+树结构进行打印输出和验证 |
 | | | BplusTreeScanner | 用于在指定范围内扫描数据，并返回RID(记录标识符)。该类提供了open打开扫描器，next_entry获取下一条数据，以及close关闭扫描器的方法 |
-| |           | Index                                              | 数据索引                                                     |
-|            |           | IndexScanner                                       | 遍历元素数据 |
-| common | IndexMeta | 元数据与JSON格式的互相转换                         |                                                              |
-| | | | |
-| | | | |
-|            |          |                       |                            |
+| |          | Index                                              | 数据索引                                                     |
+|            |          | IndexScanner                                       | 遍历元素数据 |
+|            | common   | IndexMeta                                          | 元数据与JSON格式的互相转换                                   |
+| | | ConditionFilter | 匹配一条数据的基类 |
+| | | DefaultConditionFilter : public ConditionFilter | 匹配的具体实现 |
+|            |          | CompositeConditionFilter : public ConditionFilter | 匹配的具体实现 |
+| | | Db | 数据库类，包括初始化、创建表、查找表、列出所有表、同步、恢复和获取操作日志管理器等方法 |
+| | | FieldMeta | 定义字段的基本属性，如名称、类型、偏移量、长度等，以及对这些属性进行初始化、输出描述和输出JSON格式 |
+| | | Field | 维护Table和FieldMeta |
+| | | Table | 表类，维护元数据保存的文件(完整路径)、表名、表数据存放的路径、字段个数、字段、clog管理器，用于维护redo log |
 |            |          |                       |                            |
 |            | default  | DefaultHandler        | 管理和处理数据库和表         |
 |            |          | DefaultStorageStage   | 处理事件和回调的函数的实现   |
@@ -39,7 +43,7 @@
 |            |          | BufferPoolManager     | 管理缓冲池                  |
 |            |          |                       |                            |
 |            |          |                       |                            |
-|            |           |                                                    |                                                              |
+|            |          |                                                    |                                                              |
 |            |          |                       |                            |
 |            |          |                       |                            |
 |            |          |                       |                            |
