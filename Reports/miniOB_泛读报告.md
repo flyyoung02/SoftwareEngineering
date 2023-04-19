@@ -24,7 +24,7 @@
 | | | BplusTreeScanner | 用于在指定范围内扫描数据，并返回RID(记录标识符)。该类提供了open打开扫描器，next_entry获取下一条数据，以及close关闭扫描器的方法 |
 | |           | Index                                              | 数据索引                                                     |
 |            |           | IndexScanner                                       | 遍历元素数据 |
-| common | IndexMeta | 元数据与JSON格式的互相转换                         |                                                              |
+|            | common   | IndexMeta | 元数据与JSON格式的互相转换                         |                                                              |
 | | | | |
 | | | | |
 |            |          |                       |                            |
