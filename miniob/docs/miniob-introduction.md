@@ -157,7 +157,7 @@ NOTE：clang编译器有些表现与gcc不一致，官方测试后台使用gcc�
 编译完成后，执行 
 ```bash
 observer -s miniob.sock -f observer.ini
-``` 
+```
 可以运行服务端程序。
 
 其中
